@@ -140,6 +140,17 @@ Navbar
   border-bottom: 2px solid var(--primaryColor);
   box-shadow: var(--lightShadow);
 }
+.scrolled {
+  position:fixed;
+  /* top:0;
+  left:0; */
+  background: var(--mainWhite);
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--primaryColor);
+  box-shadow: var(--lightShadow);
+}
 .nav-center {
   display: flex;
   justify-content: space-between;

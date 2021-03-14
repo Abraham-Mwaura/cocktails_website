@@ -1,11 +1,24 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import Cocktail from "./Cocktail"
 import Loading from "./Loading"
 import {useGlobalcontext} from "../context"
 
 export default function CocktailList () {
-    const {cocktails, loading} = useGlobalcontext()
+    const {cocktails,setScrolled, loading} = useGlobalcontext()
+
+    useEffect(()=>{
+        window.addEventListener("scroll",handleScroll)
+    })
+
+    const handleScroll=()=>{
+        const offset=window.scrollY
+        if(offset>200){
+            setScrolled(true)
+        }
+        else{
+            setScrolled(false)
+        }
     if(loading){
         return <Loading />
     }
@@ -17,6 +30,12 @@ export default function CocktailList () {
             </h2>
         )
     }
+  
+
+ 
+    }
+
+
 
     return (
         <section className= "section">

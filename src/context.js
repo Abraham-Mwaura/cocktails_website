@@ -8,6 +8,7 @@ const AppProvider = ({children}) => {
     const[loading, setLoading] = useState (true)
     const [searchTerm, setSearchTerm] =useState('a')
     const  [cocktails, setCocktails] = useState([])
+    const [scrolled, setScrolled] =React.useState(false)
 
     const fetchDrinks = useCallback(async ()=>
     {
@@ -53,7 +54,7 @@ const AppProvider = ({children}) => {
 
     return (
         <AppContext.Provider
-value ={{loading, cocktails, searchTerm, setSearchTerm}}
+value ={{loading, cocktails, scrolled, setScrolled,searchTerm, setSearchTerm}}
         >
             {children}
         </AppContext.Provider>
